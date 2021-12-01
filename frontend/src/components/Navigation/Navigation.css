@@ -1,0 +1,63 @@
+:root {
+  --main-background: #161910;
+  --secondary-background: #083d77;
+  --accent1: #95190c;
+  --accent2: #02a9ea;
+  --text-color: #9dbabe;
+}
+* {
+  /* font-size: 10; */
+  margin: 0;
+  list-style: none;
+  color: var(--text-color);
+   font-family: 'Audiowide', cursive;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  text-decoration: none;
+}
+body {
+  background-color: var(--main-background);
+}
+
+/*---------------------Navbar-----------------------------------------------*/
+.navbar {
+  display: flex;
+  background-color: var(--secondary-background);
+  max-height: 20px;
+}
+.navbar .homeButton {
+  justify-self: stretch;
+  cursor: pointer;
+  padding: 0px 4px 0px 0px;
+}
+img.homeButton {
+  max-height: 20px;
+  object-fit: contain;
+}
+.navbar .navLinks {
+  padding: 0px 5px;
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #95190c; */
+  object-fit: contain;
+}
+.navLinks .browseButton {
+  padding: 4px 5px;
+  border-left: 1px solid #082f5a;
+  max-height: 20px;
+}
+.navLinks .makeButton {
+  padding: 4px 5px;
+  border-left: 1px solid #082f5a;
+  border-right: 1px solid #082f5a;
+}
+
+.navbar .login_signup {
+  overflow: hidden;
+  width: 100px;
+}
+.searchBar {
+  margin: auto;
+  width: 50%;
+}

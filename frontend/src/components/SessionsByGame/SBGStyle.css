@@ -1,0 +1,113 @@
+.SBGcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerDiv {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--secondary-background);
+  border-radius: 10px;
+  background-size: cover;
+  height: 450px;
+  width: 800px;
+  background-color: rgba(25, 25, 25, 0.7);
+  background-blend-mode: darken;
+}
+
+.titleDiv {
+  font-size: 50px;
+  margin-top: 30px;
+  /* border-bottom: 5px solid #083d77; */
+}
+.titleDesc {
+  width: 600px;
+  text-align: center;
+  font-size: 20;
+  /* padding-right: 40px; */
+  margin: 20px;
+}
+.genresContainer {
+  display: flex;
+  flex-direction: column;
+}
+.genreTitle {
+  text-align: center;
+  width: 75px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+.genreButton {
+  border: 1px solid #ff562285;
+  border-radius: 5px;
+  /* width: 75px; */
+  text-align: center;
+  margin-bottom: 2px;
+  background-color: #083d77;
+}
+
+
+.titleGenres {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 20px;
+}
+.genreTitle,
+.genreButton {
+  text-align: center;
+  font-size: 20px;
+}
+.descContainer {
+  display: flex;
+  flex-direction: column;
+  /* display: grid; */
+  /* grid-template-areas: "description genres"; */
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  margin: auto;
+}
+.genresContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+.genreButton {
+  margin: 5px;
+  padding: 2px;
+}
+/*---------------------------------------------------------------------*/
+.sessionsContainer{
+
+}
+.sessionsTitle{
+    font-size:25px;
+    border-bottom: 2px solid ;
+    text-align: center;
+}
+.singleSession{
+ font-size: 15px;
+ display: flex;
+ flex-direction: row;
+ /* background-color: aqua; */
+ width: 1000px
+}
+.titleAndCreator{
+    
+    display: flex;
+    flex-direction: column;
+    height:50px;
+    margin: 5px;
+    justify-content: space-between;
+}
+.playersAndDate{
+
+    display: flex;
+    flex-direction: column;
+    height:50px;
+    margin: 5px;
+    justify-content: space-between;
+}
