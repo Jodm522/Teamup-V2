@@ -69,19 +69,29 @@ function Sessions() {
 
           {sessionlist?.map((session) => (
             <div>
-              <NavLink
-                className="singleSession"
-                to={`/genres/${gameInfo.genre3}`}
-              >
+              <NavLink className="singleSession" to={`/sessions/${session.id}`}>
                 <div className="titleAndCreator">
                   <div>{session.title}</div>
-                  <div>By {session.createdBy}</div>
+                  <div>By {session.User.username}</div>
                 </div>
-                <div className="playersAndDate">
-                <div>
-                  Current Players {session.currentPlayers}/{session.maxPlayers}
+                <div className="playersAndGame">
+                  <div>Game: {session.Game.title}</div>
+                  <div>
+                    Current Players: {session.currentPlayers}/
+                    {session.maxPlayers}
+                  </div>
                 </div>
-                <div>Date:{session.date}</div></div>
+                <div className="desc">
+                  <div>Description</div>
+                  <div>{session.text.slice(0, 16)}...</div>
+                </div>
+                <div className="dateAndTime">
+                  <div>
+                    Date: {session.date.slice(5, 7)}/{session.date.slice(8, 10)}
+                    /{session.date.slice(0, 4)}
+                  </div>
+                  <div>Time: {session.date.slice(11, 16)}</div>
+                </div>
               </NavLink>
             </div>
           ))}

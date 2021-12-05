@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const CREATE_SESSION = "sessions/createSession";
 const GET_BY_TYPE = "sessions/loadByType";
+const GET_ONE_SESSION= "sessions/loadOneSession"
 const createSession = (session) => {
   return {
     type: CREATE_SESSION,
@@ -15,12 +16,26 @@ const loadByType = (typeList) => {
     typeList,
   };
 };
+const loadOneSession = (sessionList) => {
+  return {
+    type: GET_ONE_SESSION,
+    sessionList,
+  };
+};
 export const getSessionsbyType = (type, id) => async (dispatch) => {
 
   const res = await csrfFetch(`/api/sessions/${type}/${id}`);
   if (res.ok) {
     const typeList = await res.json();
     dispatch(loadByType(typeList));
+  }
+};
+
+export const getSessionsbyId = (id) => async (dispatch) => {
+  const res = await csrfFetch(`/api/sessions/session/${id}`);
+  if (res.ok) {
+    const sessionList = await res.json();
+    dispatch(loadOneSession(sessionList));
   }
 };
 
@@ -56,10 +71,12 @@ const createSessionReducer = (state = initialState, action) => {
     case GET_BY_TYPE: {
       return action.typeList;
     }
+    case GET_ONE_SESSION:{
+      return action.sessionList
+    }
     default:
       return state;
   }
 };
 
 export default createSessionReducer;
-

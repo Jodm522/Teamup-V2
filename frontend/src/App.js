@@ -15,6 +15,7 @@ import CreateSessionPage from "./components/createSession";
 import MakeGamePage from "./components/makeGame";
 import Games from "./components/Games";
 import SessionsByGame from "./components/SessionsByGame";
+import SessionPage from "./components/SessionPage"
 
 
 
@@ -37,11 +38,10 @@ function App() {
             <SignupFormPage />
           </Route>
         )}
-        
+
         <Route path="/genres/:genreId">
           <Genre />
         </Route>
-
 
         <Route path="/genres" exact>
           <Genres />
@@ -66,6 +66,9 @@ function App() {
         </Route>
         <Route path="/sessions/game/:id">
           <SessionsByGame />
+        </Route>
+        <Route path="/sessions/:id" exact>
+          <SessionPage />
         </Route>
       </Switch>
     </>

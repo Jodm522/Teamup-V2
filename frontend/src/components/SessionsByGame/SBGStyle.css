@@ -80,9 +80,6 @@
   padding: 2px;
 }
 /*---------------------------------------------------------------------*/
-.sessionsContainer{
-
-}
 .sessionsTitle{
     font-size:25px;
     border-bottom: 2px solid ;
@@ -92,22 +89,18 @@
  font-size: 15px;
  display: flex;
  flex-direction: row;
- /* background-color: aqua; */
- width: 1000px
+ justify-content: space-around;
+ background-color:var(--secondary-background);
+ border: 2px solid #ff562285;
+ border-radius: 10px;
+ width: 1000px;
+ margin-top: 5px;
 }
-.titleAndCreator{
-    
-    display: flex;
-    flex-direction: column;
-    height:50px;
-    margin: 5px;
-    justify-content: space-between;
-}
-.playersAndDate{
 
+.titleAndCreator,.playersAndGame, .dateAndTime,.desc {
     display: flex;
     flex-direction: column;
     height:50px;
     margin: 5px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
