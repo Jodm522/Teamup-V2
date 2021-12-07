@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -7,6 +7,9 @@ import "./sessionPageStyle.css";
 function Sessions() {
   const {id} = useParams();
   const dispatch = useDispatch();
+  let [currentPlayerArray,setCurrentPlayerArray]= useState([]);
+  let [currentPlayerUIDs, setCurrentPlayerUIDs]=useState([])
+
   useEffect(() => {
     dispatch(getSessionsbyId(id));
   }, [dispatch]);
@@ -14,6 +17,15 @@ function Sessions() {
 const sessionInfo = useSelector((state)=>{
   return state.session
 })
+
+
+let acceptedPlayers = sessionInfo?.acceptedPlayers
+if(acceptedPlayers){
+ Object.keys(acceptedPlayers).map(function(name,uid){
+  currentPlayerArray=[...currentPlayerArray, name]
+  currentPlayerUIDs=[...currentPlayerUIDs, uid]
+  console.log(currentPlayerArray)
+})}
 
 return (
   <div className="sessionContainer">
@@ -46,8 +58,18 @@ return (
             <div className="descTitle">Description</div>
             <div>{sessionInfo.text}</div>
           </div>
+
+          
+          
+
           <div className="players">
+
             Players:{sessionInfo.currentPlayers}/{sessionInfo.maxPlayers}
+            <div>
+          {currentPlayerArray.map((playerName, idx)=>(
+             <div>{playerName}@{currentPlayerUIDs[idx]}</div>
+    ))}
+           </div>
 
           {sessionInfo.currentPlayers < sessionInfo.maxPlayers && (
             <div className="buttonorReturn">CLICK HERE TO JOIN</div>

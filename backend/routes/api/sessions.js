@@ -33,6 +33,7 @@ router.get("/session/:id", async (req, res) => {
 });
 
 router.get("/:type/:id", async (req, res) => {
+  
   const type = req.params.type;
   const id = req.params.id;
   let list;
@@ -40,6 +41,7 @@ router.get("/:type/:id", async (req, res) => {
     list = await Session.findAll({ where: { playtypeId: id } });
   }
   if (type === "game") {
+    console.log("XXXXXXXXXXXXXXXXXXXASDFASDFASDFASDFASDFASDFASDFASDFSDFDASDFASDFASDF")
     list = await Session.findAll({
       where: { gameId: id },
       include: [{ all: true }],

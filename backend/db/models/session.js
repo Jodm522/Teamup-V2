@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       date: DataTypes.DATE,
       text: DataTypes.TEXT,
       maxPlayers: DataTypes.INTEGER,
-      currentPlayers: DataTypes.INTEGER
+      currentPlayers: DataTypes.INTEGER,
+      acceptedPlayers: DataTypes.JSON,
     },
     {}
   );
