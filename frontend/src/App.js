@@ -16,6 +16,7 @@ import MakeGamePage from "./components/makeGame";
 import Games from "./components/Games";
 import SessionsByGame from "./components/SessionsByGame";
 import SessionPage from "./components/SessionPage"
+import Profile from "./components/Profile"
 
 
 
@@ -69,6 +70,9 @@ function App() {
         </Route>
         <Route path="/sessions/:id" exact>
           <SessionPage />
+        </Route>
+        <Route path = "/profiles/:id">
+          <Profile/>
         </Route>
       </Switch>
     </>

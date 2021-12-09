@@ -7,7 +7,7 @@ const platformsRouter = require("./platforms.js");
 const playtypesRouter = require("./playtypes.js");
 const gamesRouter = require("./games.js");
 const sessionsRouter = require("./sessions.js");
-
+const profilesRouter = require("./profiles.js")
 router.post("/test", function (req, res) {
   res.json({ requestBody: req.body });
 });
@@ -18,5 +18,6 @@ router.use("/platforms", platformsRouter);
 router.use("/session", sessionRouter);
 router.use("/users", usersRouter);
 router.use("/playtypes", playtypesRouter);
+router.use("/profiles", profilesRouter)
 
 module.exports = router;

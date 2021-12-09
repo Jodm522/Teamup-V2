@@ -23,6 +23,7 @@ router.post(
     });
   })
 );
+
 router.get("/session/:id", async (req, res) => {
   const id = req.params.id;
   let session = await Session.findOne({

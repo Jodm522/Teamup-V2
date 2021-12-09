@@ -8,7 +8,7 @@ router.get(
   "/:id",
   asyncHandler(async function (req, res) {
     const id = req.params.id;
-    console.log("IN API /:ID");
+    // console.log("IN API /:ID");
     const genre = await Genre.findByPk(id);
     const games = await Game.findAll({where: { [Op.or]: [{ genre1: id }, { genre2: id },{genre3:id}] }
 }

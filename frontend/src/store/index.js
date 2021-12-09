@@ -6,14 +6,16 @@ import genresReducer from "./categories";
 import platformsReducer from "./platforms";
 import playtypesReducer from "./playtypes";
 import gamesReducer from "./games"
-import createSessionReducer from "./sessions"
+import createSessionReducer from "./sessions";
+import profilesReducer from "./profile";
 const rootReducer = combineReducers({
   session: sessionReducer,
   genres: genresReducer, 
   platforms: platformsReducer,
   playtypes: playtypesReducer,
   games: gamesReducer,
-  session:createSessionReducer
+  session:createSessionReducer,
+  profiles:profilesReducer
 });
 
 let enhancer;
