@@ -6,52 +6,56 @@
   --text-color: #9dbabe;
 }
 
-
-
-.sessionContainer{
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 10px;
-
+.sessionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.sessionTitle{
+.sessionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border-bottom: 3px solid var(--secondary-background);
+}
+.titleAndDate {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sessDesc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.descTitle {
+  font-size: 20px;
+  border-bottom: 3px solid var(--accent1);
+  margin-top: 25px;
+}
+.dateTime {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75px;
+}
+.currentPlayerList {
+    width: 500px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    border-bottom: 3px solid var(--secondary-background);
-}
-.titleAndDate{
-    margin-top: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin: 5px;
+  justify-content: space-evenly;
+
 
 
 }
-.sessDesc{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.descTitle{
- font-size: 20px;
- border-bottom: 3px solid var(--accent1);
- margin-top: 25px;
-}
-.dateTime{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 75px;
-}
-.players{
-    display: flex;
-    height: 100;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+.players {
+  display: flex;
+  height: 100;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
