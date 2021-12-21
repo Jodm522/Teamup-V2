@@ -1,3 +1,5 @@
+const { singleMulterUpload, singlePublicFileUpload } = require("../../awsS3");
+
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 
@@ -41,6 +43,26 @@ router.post(
     });
 
     await setTokenCookie(res, user);
+
+    return res.json({
+      user,
+    });
+  })
+);
+// post image
+
+router.post(
+  "/profileimage/:id",
+  singleMulterUpload("image"),
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+
+    // console.log("SADFASDF" + req.file);
+    const profileImageUrl = await singlePublicFileUpload(req.file);
+    const user = await User.update(
+      { profileImage: profileImageUrl },
+      { where: { id: id } }
+    );
 
     return res.json({
       user,

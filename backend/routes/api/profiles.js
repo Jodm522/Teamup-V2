@@ -10,7 +10,7 @@ const { Op } = require("sequelize");
 
 
 router.get("/:id", asyncHandler(async function(req,res){
-    console.log("ASDFAAAAAAAAAAAAAAAAAAAAASDFs")
+   
     const id = req.params.id;
     let profile = await User.findOne({ where:{id:id}})
     res.json(profile)
