@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       bio: DataTypes.TEXT,
       profileImage: DataTypes.TEXT,
+      bannerImage: DataTypes.TEXT,
 
       email: {
         type: DataTypes.STRING,
@@ -63,6 +64,16 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function (models) {
     User.hasMany(models.Session, {
       foreignKey: "userId",
+      onDelete: "CASCADE",
+      hooks: true,
+    });
+    User.hasMany(models.Rating, {
+      foreignKey: "senderId",
+      onDelete: "CASCADE",
+      hooks: true,
+    });
+    User.hasMany(models.Rating, {
+      foreignKey: "receivingId",
       onDelete: "CASCADE",
       hooks: true,
     });

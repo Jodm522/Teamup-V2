@@ -13,8 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       maxPlayers: DataTypes.INTEGER,
       currentPlayers: DataTypes.INTEGER,
       acceptedPlayers: DataTypes.JSON,
+      applicants: DataTypes.JSON,
     },
-    {}
+    
   );
   Session.associate = function (models) {
     Session.belongsTo(models.User, { foreignKey: "userId" });

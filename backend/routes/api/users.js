@@ -70,4 +70,23 @@ router.post(
   })
 );
 
+router.post(
+  "/bannerimage/:id",
+  singleMulterUpload("image"),
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+
+    // console.log("SADFASDF" + req.file);
+    const bannerImageUrl = await singlePublicFileUpload(req.file);
+    const user = await User.update(
+      { bannerImage: bannerImageUrl },
+      { where: { id: id } }
+    );
+
+    return res.json({
+      user,
+    });
+  })
+);
+
 module.exports = router;

@@ -30,6 +30,7 @@ module.exports = {
         type: Sequelize.STRING(500),
         allowNull: true,
       },
+
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
@@ -43,6 +44,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("now"),
+      },
+      profileImage: {
+        type: Sequelize.STRING(500),
+        allowNull: true,
+      },
+      bannerImage: {
+        type: Sequelize.STRING(500),
+        allowNull: true,
       },
     });
   },
