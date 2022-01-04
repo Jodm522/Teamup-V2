@@ -9,6 +9,8 @@
         "start": "npm start --prefix backend"
     },
     "dependencies": {
+        "aws-sdk": "^2.1046.0",
+        "multer": "^1.4.4",
         "react-select": "^4.3.1"
     }
 }

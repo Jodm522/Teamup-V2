@@ -5,17 +5,23 @@ import sessionReducer from "./session";
 import genresReducer from "./categories";
 import platformsReducer from "./platforms";
 import playtypesReducer from "./playtypes";
-import gamesReducer from "./games"
+import gamesReducer from "./games";
 import createSessionReducer from "./sessions";
 import profilesReducer from "./profile";
+import imagesReducer from "./images";
+import ratingsReducer from "./ratings";
+import applicationsReducer from "./applications";
 const rootReducer = combineReducers({
-  session: sessionReducer,
-  genres: genresReducer, 
+  userSession: sessionReducer,
+  genres: genresReducer,
   platforms: platformsReducer,
   playtypes: playtypesReducer,
   games: gamesReducer,
-  session:createSessionReducer,
-  profiles:profilesReducer
+  session: createSessionReducer,
+  profiles: profilesReducer,
+  images: imagesReducer,
+  ratings: ratingsReducer,
+  applications: applicationsReducer,
 });
 
 let enhancer;

@@ -44,13 +44,10 @@
   height: 75px;
 }
 .currentPlayerList {
-    width: 500px;
-    display: flex;
-    margin: 5px;
+  width: 500px;
+  display: flex;
+  margin: 5px;
   justify-content: space-evenly;
-
-
-
 }
 .players {
   display: flex;
@@ -58,4 +55,63 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+}
+.applicantsModal {
+  z-index: 50;
+  position: absolute;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--secondary-background);
+  border-radius: 10px;
+  background-size: cover;
+  height: 450px;
+  width: 800px;
+  background-color: #161910;
+}
+.singleApplicant {
+  display: flex;
+  border: 3px solid var(--accent1);
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-color: rgba(25, 25, 25, 0.7);
+  background-blend-mode: darken;
+}
+
+.applicationText {
+  margin: auto;
+}
+
+.closeButton {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.fa-times-circle {
+  cursor: pointer;
+}
+.applicantButtons {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.profileModal{
+  z-index: 100;
+  position: absolute;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--secondary-background);
+  border-radius: 10px;
+  background-size: cover;
+  height: 450px;
+  width: 800px;
+  background-color: #161910;
 }
