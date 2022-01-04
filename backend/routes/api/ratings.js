@@ -6,8 +6,7 @@ const { Op } = require("sequelize");
 
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
-  console.log("IN API " + id);
-
+  
   let ratings = await Rating.findAll({
     where: { receivingId: id },
     include: [{ all: true }],

@@ -9,6 +9,9 @@ const gamesRouter = require("./games.js");
 const sessionsRouter = require("./sessions.js");
 const profilesRouter = require("./profiles.js");
 const ratingsRouter = require("./ratings.js");
+const applicationsRouter = require("./applications.js");
+
+
 router.post("/test", function (req, res) {
   res.json({ requestBody: req.body });
 });
@@ -21,5 +24,6 @@ router.use("/users", usersRouter);
 router.use("/playtypes", playtypesRouter);
 router.use("/profiles", profilesRouter);
 router.use("/ratings", ratingsRouter);
+router.use("/applications", applicationsRouter);
 
 module.exports = router;
