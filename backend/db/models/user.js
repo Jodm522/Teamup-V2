@@ -77,6 +77,16 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE",
       hooks: true,
     });
+    User.hasMany(models.User_groups_link, {
+      foreignKey: "userid",
+      onDelete: "CASCADE",
+      hooks: true,
+    });
+    User.hasMany(models.Chat_texts, {
+      foreignKey: "senderid",
+      onDelete: "CASCADE",
+      hooks: true,
+    });
   };
 
   User.prototype.toSafeObject = function () {

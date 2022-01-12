@@ -33,8 +33,11 @@
   justify-content: center;
 }
 .descTitle {
+  display: flex;
+
+  
   font-size: 20px;
-  border-bottom: 3px solid var(--accent1);
+  border-bottom: 5px double var(--secondary-background);
   margin-top: 25px;
 }
 .dateTime {
@@ -101,7 +104,7 @@
   flex-direction: column;
   margin: 5px;
 }
-.profileModal{
+.profileModal {
   z-index: 100;
   position: absolute;
   margin-top: 10px;
