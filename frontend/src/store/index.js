@@ -11,6 +11,8 @@ import profilesReducer from "./profile";
 import imagesReducer from "./images";
 import ratingsReducer from "./ratings";
 import applicationsReducer from "./applications";
+import groupsReducer from "./groups";
+import chatsReducer from "./chats";
 const rootReducer = combineReducers({
   userSession: sessionReducer,
   genres: genresReducer,
@@ -22,6 +24,8 @@ const rootReducer = combineReducers({
   images: imagesReducer,
   ratings: ratingsReducer,
   applications: applicationsReducer,
+  groups: groupsReducer,
+  chats:chatsReducer
 });
 
 let enhancer;

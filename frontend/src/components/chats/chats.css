@@ -1,0 +1,86 @@
+:root {
+  --main-background: #161910;
+  --secondary-background: #083d77;
+  --accent1: #95190c;
+  --accent2: #02a9ea;
+  --text-color: #9dbabe;
+}
+
+.chatImage {
+  margin-left: 120px;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  border-radius: 10px;
+  border: 3px solid red;
+  cursor: pointer;
+}
+.chatImage:hover {
+  width: 60px;
+  height: 60px;
+  margin-top: 5px;
+  background-size: contain;
+  border-radius: 10px;
+  border: 3px solid red;
+  cursor: pointer;
+}
+.chatsContainer {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 1000px;
+  height: 500px;
+  border: 5px solid red;
+  border-radius: 10px;
+}
+.groupsImages {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 75px;
+  align-items: center;
+  border-right: 5px solid red;
+  margin-top: 0;
+
+  overflow-y: initial;
+  overflow-x: auto;
+}
+.chatHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  overflow: show;
+  width: 300;
+}
+/* Scrollbar setup */
+/* width */
+.groupsImages::-webkit-scrollbar {
+  width: 0px;
+  padding: 0;
+}
+.chatsDiv {
+  position: absolute;
+  z-index: -1;
+}
+.groupTitle {
+  height: 50px;
+  background-color: var(--secondary-background);
+  align-self: center;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+}
+.chatTitleContainer {
+  overflow: show;
+}
+.titleImageContainer {
+  display: flex;
+  flex-direction: row;
+}
+.chatsDiv {
+  margin-left: 100px;
+  margin-top: 10px;
+  background-color: #083d77;
+  width: 875px;
+  height: 480px;
+}

@@ -10,7 +10,7 @@
   margin: 0;
   list-style: none;
   color: var(--text-color);
-   font-family: 'Audiowide', cursive;
+  font-family: "Audiowide", cursive;
   /* font-family: Arial, Helvetica, sans-serif; */
   text-decoration: none;
 }
@@ -21,8 +21,9 @@ body {
 /*---------------------Navbar-----------------------------------------------*/
 .navbar {
   display: flex;
+  flex-direction: row;
   background-color: var(--secondary-background);
-  max-height: 20px;
+  max-height: 45px;
 }
 .navbar .homeButton {
   justify-self: stretch;
@@ -33,7 +34,7 @@ img.homeButton {
   max-height: 20px;
   object-fit: contain;
 }
-.navbar .navLinks {
+.navLinks {
   padding: 0px 5px;
   justify-self: flex-start;
   display: flex;
@@ -49,15 +50,43 @@ img.homeButton {
 }
 .navLinks .makeButton {
   padding: 4px 5px;
+  width:max-content;
   border-left: 1px solid #082f5a;
   border-right: 1px solid #082f5a;
 }
 
-.navbar .login_signup {
-  overflow: hidden;
-  width: 100px;
+.userButtons {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+   width: 100%;
+  /* align-self: flex-end; */
 }
 .searchBar {
   margin: auto;
   width: 50%;
+}
+.signupButton {
+  font-size: 13px;
+  background-color: #95190c;
+  padding: 3px;
+  margin: auto;
+  border: 3px solid #083d77;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.profileButton a, .logoutButton,.chatsModalButton{
+  height:100%;
+  font-size: 13px;
+  background-color: #95190c;
+  padding: 3px;
+  margin: auto;
+  border: 3px solid #083d77;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.profileButton, .login_signupButtons{
+  display: flex;
+  flex-direction: row;
 }

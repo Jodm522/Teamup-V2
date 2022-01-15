@@ -15,10 +15,9 @@ import CreateSessionPage from "./components/createSession";
 import MakeGamePage from "./components/makeGame";
 import Games from "./components/Games";
 import SessionsByGame from "./components/SessionsByGame";
-import SessionPage from "./components/SessionPage"
-import Profile from "./components/Profile"
-
-
+import SessionPage from "./components/SessionPage";
+import Profile from "./components/Profile";
+import Chats from "./components/chats";
 
 function App() {
   const dispatch = useDispatch();
@@ -71,8 +70,11 @@ function App() {
         <Route path="/sessions/:id" exact>
           <SessionPage />
         </Route>
-        <Route path = "/profiles/:id">
-          <Profile/>
+        <Route path="/chats">
+          <Chats />
+        </Route>
+        <Route path="/profiles/:id">
+          <Profile />
         </Route>
       </Switch>
     </>

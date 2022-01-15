@@ -6,12 +6,12 @@ const { Op } = require("sequelize");
 
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
-  
+
   let ratings = await Rating.findAll({
     where: { receivingId: id },
     include: [{ all: true }],
   });
-  console.log(ratings);
+
   res.json(ratings);
 });
 
@@ -19,8 +19,7 @@ router.post(
   "/",
   asyncHandler(async (req, res) => {
     const { fromUser, toUser, rating, comment } = req.body;
-    console.log(fromUser, toUser, rating, comment);
-
+    console.log(fromUser, toUser, rating, comment + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     const check = await Rating.findOne({
       where: { receivingId: toUser } && { senderId: fromUser },
     });

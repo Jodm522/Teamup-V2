@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneCategory } from "../../store/categories";
-import { NavLink,  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Genre() {
   const { genreId } = useParams();
   const dispatch = useDispatch();

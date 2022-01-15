@@ -6,6 +6,10 @@ import { loadOneProfile } from "../../store/profile";
 import { addProfileImage, addBannerImage } from "../../store/images";
 import { submitRating } from "../../store/ratings";
 import "./Profile.css";
+//for testing, to be removed
+// import { getAllUserGroups } from "../../store/groups";
+// import { loadGroupChats } from "../../store/chats";
+//=====================================
 
 function Profile() {
   const { id } = useParams();
@@ -28,6 +32,7 @@ function Profile() {
   useEffect(() => {
     dispatch(loadOneProfile(id));
     dispatch(getRatings(id));
+    
   }, [dispatch, hasSubmittedRating]);
 
   const profileInfo = useSelector((state) => {
@@ -52,7 +57,6 @@ function Profile() {
   const handleRating = (e) => {
     e.preventDefault();
     let ratingNum = hasSubmittedRating;
-    //console.log(ratingToSubmit, commentToSubmit, id, currentUserId);
     dispatch(submitRating(ratingToSubmit, commentToSubmit, id, currentUserId));
     ratingNum += 1;
 

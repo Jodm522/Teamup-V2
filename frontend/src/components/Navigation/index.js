@@ -1,27 +1,43 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ProfileButton from "./ProfileButton";
+import { useDispatch } from "react-redux";
+// import ProfileButton from "./ProfileButton";
+import { logout } from "../../store/session";
 import LoginFormModal from "../LoginFormModal";
 import "./Navigation.css";
 import logo from "./placeholder-logo.png";
 
-function Navigation({ isLoaded }) {
-  const sessionUser = useSelector((state) => state.session.user);
-
+function Navigation() {
+  const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state?.userSession?.user);
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    sessionLinks = (
+      <div className="profileButton">
+        <div className="chatsModalButton">My chats</div>
+        <NavLink to={`/profiles/${sessionUser.id}`}>My profile</NavLink>
+        <div
+          className="logoutButton"
+          onClick={(e) => {
+            dispatch(logout());
+          }}
+        >
+          Logout
+        </div>
+      </div>
+    );
   } else {
     sessionLinks = (
-      <>
+      <div className="login_signupButtons">
         <div className="loginButton">
           <LoginFormModal />
         </div>
         <div className="signupButton">
           <NavLink to="/signup">Sign Up</NavLink>
         </div>
-      </>
+
+      </div>
     );
   }
 
@@ -40,17 +56,7 @@ function Navigation({ isLoaded }) {
           <NavLink to="/createSession">Make a Session</NavLink>
         </div>
       </div>
-      {/* <div className="searchBar">
-        <form>
-          <input type="text"></input>
-          <button type="submit>">go</button>
-        </form>
-      </div> */}
-
-      <div className="login_signup">
-        <div>{isLoaded}</div>
-        <div>{sessionLinks}</div>
-      </div>
+      <div className="userButtons">{sessionLinks}</div>
     </div>
   );
 }
